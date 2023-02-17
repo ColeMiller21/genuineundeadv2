@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --app-height: auto;
+}
+
+.min-full-height {
+  min-height: var(--app-height) !important;
+}
+
+.positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide {
+  z-index: -1000 !important;
+}
+
+/* MENU ICON */
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 100 !important;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: black;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.ham4 .top {
+  stroke-dasharray: 40 121;
+}
+.ham4 .bottom {
+  stroke-dasharray: 40 121;
+}
+.ham4.active .top {
+  stroke-dashoffset: -68px;
+}
+.ham4.active .bottom {
+  stroke-dashoffset: -68px;
+}
+/* END MENU ICON */
+
+input:checked ~ .dot {
+  transform: translateX(100%);
+}
+
+.white-border {
+  border: 1px solid #f8f8f4;
+}
+.text-container,
+.collection-container {
+  /* padding: 150px 0px; */
+  @apply lg:py-[150px];
+}
+
+.text-container::before,
+.text-container::after {
+  content: "";
+  position: absolute;
+  left: 25%; /* Adjust as needed */
+  transform: translateX(
+    -50%
+  ); /* This will center the line on the left property*/
+  width: 1px; /* Adjust as needed */
+  @apply dark:bg-white bg-black hidden lg:block/* Adjust as needed */;
+}
+
+.collection-container::before,
+.collection-container::after {
+  content: "";
+  position: absolute;
+  left: 25%; /* Adjust as needed */
+  transform: translateX(
+    -50%
+  ); /* This will center the line on the left property*/
+  width: 1px; /* Adjust as needed */
+  @apply dark:bg-white bg-black;
+}
+
+.collection-container::before {
+  top: -200px; /* Adjust as needed */
+  height: 350px;
+}
+
+.collection-container::after {
+  bottom: -200px; /* Adjust as needed */
+  height: 350px; /* This will make the line go from bottom to top*/
+}
+
+.text-container::before {
+  top: -200px; /* Adjust as needed */
+  height: 300px; /* This will make the line go from top to bottom*/
+}
+
+.text-container::after {
+  bottom: -200px; /* Adjust as needed */
+  height: 300px; /* This will make the line go from bottom to top*/
+}
+
+/* //SCROLL TRIGGER TESTING */
+.smooth-scroller {
+  overflow: hidden;
+}
+
+.hero-scroller {
+  height: 250vh;
+  overflow: hidden;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  padding: 50px;
+  justify-content: center;
+}
+
+.copy {
+  background: #d4cfc0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-wrapper {
+  max-width: 1400px;
+}
+
+.content {
+  width: 100%;
+  max-width: 840px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 150px;
+  margin: 0px;
+  text-transform: uppercase;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 50%;
+}
+
+.image {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
+
+p {
+  font-size: 4em;
+  line-height: 1.2em;
+}
+
+.pin-spacer {
+  z-index: 1 !important;
+  overflow: hidden;
+}
+
+.above-all {
+  z-index: 100 !important;
+}
+
+.didot-font {
+  font-weight: 300 !important;
+}
